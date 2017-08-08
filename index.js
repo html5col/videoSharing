@@ -174,7 +174,7 @@ app.use(busboy({
 }));
 
 // routes
-app.use('/api/v1', cors(), apiRouterV1);
+// app.use('/api/v1', cors(), apiRouterV1);
 app.use('/', webRouter);
 
 // error handler

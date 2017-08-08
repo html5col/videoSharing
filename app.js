@@ -7,11 +7,11 @@
  */
 console.log('a')
 var config = require('./config');
-
+console.log('aa')
 if (!config.debug && config.oneapm_key) {
   require('oneapm');
 }
-
+console.log('aaa')
 require('colors');
 var path = require('path');
 var Loader = require('loader');
@@ -21,6 +21,7 @@ var session = require('express-session');
 var passport = require('passport');
 require('./middlewares/mongoose_log'); // 打印 mongodb 查询日志
 require('./models');
+console.log('aaaaaa')
 // var GitHubStrategy = require('passport-github').Strategy;
 // var githubStrategyMiddleware = require('./middlewares/github_strategy');
 var webRouter = require('./web_router');
@@ -41,7 +42,7 @@ var renderMiddleware = require('./middlewares/render');
 var logger = require('./common/logger');
 var helmet = require('helmet');
 var bytes = require('bytes')
-
+console.log('aaaaaaaaaaaa')
 
 
 console.log('bbbbb')

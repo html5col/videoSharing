@@ -30,7 +30,7 @@ co(function*(){
 var webRouter = require('./web_router');
 // var apiRouterV1 = require('./api_router_v1');
 var auth = require('./middlewares/auth');
-xconsole.log('llllllll')
+console.log('llllllll')
 var errorPageMiddleware = require('./middlewares/error_page');
 var proxyMiddleware = require('./middlewares/proxy');
 var RedisStore = require('connect-redis')(session);

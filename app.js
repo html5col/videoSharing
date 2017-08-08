@@ -37,7 +37,9 @@ var RedisStore = require('connect-redis')(session);
 var _ = require('lodash');
 console.log('xxxxxx')
 var csurf = require('csurf');
+console.log(';;;;;')
 var compress = require('compression');
+console.log('qqqqq')
 var bodyParser = require('body-parser');
 console.log('iiiiiii')
 var busboy = require('connect-busboy');

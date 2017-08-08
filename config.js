@@ -11,7 +11,7 @@ var config = {
   get mini_assets() { return !this.debug; }, // 是否启用静态文件的合并压缩，详见视图中的Loader
 
   name: 'Nodeclub', // 社区名字
-  description: 'CNode：Node.js专业中文社区', // 社区的描述
+  description: '专业的两性社区', // 社区的描述
   keywords: 'nodejs, node, express, connect, socket.io',
 
   // 添加到 html head 中的信息
@@ -140,7 +140,7 @@ var config = {
 };
 
 if (process.env.NODE_ENV === 'test') {
-  config.db = 'mongodb://127.0.0.1/node_club_test';
+  config.db = 'mongodb://127.0.0.1:27017/node_club_test';
 }
 
 module.exports = config;

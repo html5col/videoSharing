@@ -21,8 +21,8 @@ var session = require('express-session');
 var passport = require('passport');
 require('./middlewares/mongoose_log'); // 打印 mongodb 查询日志
 require('./models');
-var GitHubStrategy = require('passport-github').Strategy;
-var githubStrategyMiddleware = require('./middlewares/github_strategy');
+// var GitHubStrategy = require('passport-github').Strategy;
+// var githubStrategyMiddleware = require('./middlewares/github_strategy');
 var webRouter = require('./web_router');
 var apiRouterV1 = require('./api_router_v1');
 var auth = require('./middlewares/auth');
@@ -114,7 +114,7 @@ passport.serializeUser(function (user, done) {
 passport.deserializeUser(function (user, done) {
   done(null, user);
 });
-passport.use(new GitHubStrategy(config.GITHUB_OAUTH, githubStrategyMiddleware));
+// passport.use(new GitHubStrategy(config.GITHUB_OAUTH, githubStrategyMiddleware));
 
 // custom middleware
 app.use(auth.authUser);

@@ -24,6 +24,9 @@ require('./models');
 console.log('aaaaaa')
 // var GitHubStrategy = require('passport-github').Strategy;
 // var githubStrategyMiddleware = require('./middlewares/github_strategy');
+
+let co = require('co')
+co(function*(){
 var webRouter = require('./web_router');
 var apiRouterV1 = require('./api_router_v1');
 var auth = require('./middlewares/auth');
@@ -187,3 +190,16 @@ if (!module.parent) {
 }
 
 module.exports = app;
+
+
+
+
+
+
+})
+.catch(function(e){
+ console.log('error: '+ e.stack)
+ throw new Error(e)
+})
+
+

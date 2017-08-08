@@ -5,7 +5,7 @@
 /**
  * Module dependencies.
  */
-
+console.log('a')
 var config = require('./config');
 
 if (!config.debug && config.oneapm_key) {
@@ -43,6 +43,8 @@ var helmet = require('helmet');
 var bytes = require('bytes')
 
 
+
+console.log('bbbbb')
 // 静态文件目录
 var staticDir = path.join(__dirname, 'public');
 // assets
@@ -59,7 +61,7 @@ if (config.mini_assets) {
 
 var urlinfo = require('url').parse(config.host);
 config.hostname = urlinfo.hostname || config.host;
-
+console.log('1111111111111')
 var app = express();
 
 // configuration in all env
@@ -77,6 +79,8 @@ if (config.debug) {
   app.use(renderMiddleware.render);
 }
 
+
+console.log('ccccccc')
 // 静态资源
 if (config.debug) {
   app.use(LoaderConnect.less(__dirname)); // 测试环境用，编译 .less on the fly
@@ -104,6 +108,8 @@ app.use(session({
   saveUninitialized: false,
 }));
 
+
+console.log('ddddddddd')
 // oauth 中间件
 app.use(passport.initialize());
 
@@ -115,11 +121,11 @@ passport.deserializeUser(function (user, done) {
   done(null, user);
 });
 // passport.use(new GitHubStrategy(config.GITHUB_OAUTH, githubStrategyMiddleware));
-
+console.log('333333')
 // custom middleware
 app.use(auth.authUser);
 app.use(auth.blockUser());
-
+console.log('fffffffffffffffffffffff')
 if (!config.debug) {
   app.use(function (req, res, next) {
     if (req.path === '/api' || req.path.indexOf('/api') === -1) {

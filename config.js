@@ -35,7 +35,8 @@ var config = {
   cnzz_tracker_id: '',
 
   // mongodb 配置
-  db: 'mongodb://127.0.0.1/node_club_dev',
+  //mongodb://localhost:${mongoPort}/test
+  db: 'mongodb://localhost:27017/node_club_dev',
 
   // redis 配置，默认是本地
   redis_host: '127.0.0.1',
@@ -43,7 +44,7 @@ var config = {
   redis_db: 0,
   redis_password: '',
 
-  session_secret: 'node_club_secret', // 务必修改
+  session_secret: 'my_secret', // 务必修改
   auth_cookie_name: 'node_club',
 
   // 程序运行的端口

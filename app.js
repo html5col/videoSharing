@@ -28,21 +28,26 @@ console.log('aaaaaa')
 let co = require('co')
 co(function*(){
 var webRouter = require('./web_router');
-var apiRouterV1 = require('./api_router_v1');
+// var apiRouterV1 = require('./api_router_v1');
 var auth = require('./middlewares/auth');
+xconsole.log('llllllll')
 var errorPageMiddleware = require('./middlewares/error_page');
 var proxyMiddleware = require('./middlewares/proxy');
 var RedisStore = require('connect-redis')(session);
 var _ = require('lodash');
+console.log('xxxxxx')
 var csurf = require('csurf');
 var compress = require('compression');
 var bodyParser = require('body-parser');
+console.log('iiiiiii')
 var busboy = require('connect-busboy');
 var errorhandler = require('errorhandler');
 var cors = require('cors');
+console.log('aaaaabbbbbbb')
 var requestLog = require('./middlewares/request_log');
 var renderMiddleware = require('./middlewares/render');
 var logger = require('./common/logger');
+console.log('aaaaaaaaaaaabbbbbbbbbbbbbbbbbbb')
 var helmet = require('helmet');
 var bytes = require('bytes')
 console.log('aaaaaaaaaaaa')

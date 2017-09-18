@@ -10,7 +10,7 @@ var config = {
 
   get mini_assets() { return !this.debug; }, // 是否启用静态文件的合并压缩，详见视图中的Loader
 
-  name: 'BIT360', // 社区名字
+  name: 'BTC360', // 社区名字
   description: '区块链社区', // 社区的描述
   keywords: '区块链, 比特币, ICO, 莱特币, ETH, LTC',
 

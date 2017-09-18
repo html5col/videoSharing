@@ -2,11 +2,20 @@ var validator      = require('validator');
 var eventproxy     = require('eventproxy');
 var config         = require('../config');
 var User           = require('../proxy').User;
+
+var UserContructor = require('../models/user');
+// var models  = require('../models');
+// var UserContructor    = models.User;
+
 var mail           = require('../common/mail');
 var tools          = require('../common/tools');
 var utility        = require('utility');
 var authMiddleWare = require('../middlewares/auth');
 var uuid           = require('node-uuid');
+// var co = require('co');
+
+
+
 
 //sign up
 exports.showSignup = function (req, res) {
@@ -67,10 +76,26 @@ exports.signup = function (req, res, next) {
           return next(err);
         }
         // 发送激活邮件
-        mail.sendActiveMail(email, utility.md5(email + passhash + config.session_secret), loginname);
-        res.render('sign/signup', {
-          success: '欢迎加入 ' + config.name + '！我们已给您的注册邮箱发送了一封邮件，请点击里面的链接来激活您的帐号。'
+        // mail.sendActiveMail(email, utility.md5(email + passhash + config.session_secret), loginname);
+
+        let auser = new UserContructor({
+          acitve: true
         });
+        
+        auser.save(function(err){
+          if(err){
+            console.log('err'+err)
+            throw new Error(err)
+          }
+          res.render('sign/signup', {
+            success: '欢迎加入 ' + config.name
+          });          
+        });
+
+
+
+
+
       });
 
     }));

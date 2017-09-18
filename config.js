@@ -10,9 +10,9 @@ var config = {
 
   get mini_assets() { return !this.debug; }, // 是否启用静态文件的合并压缩，详见视图中的Loader
 
-  name: '520SEX', // 社区名字
-  description: '专业的两性社区', // 社区的描述
-  keywords: '两性, 强奸, 少女, 裸聊, 约炮',
+  name: 'BIT360', // 社区名字
+  description: '区块链社区', // 社区的描述
+  keywords: '区块链, 比特币, ICO, 莱特币, ETH, LTC',
 
   // 添加到 html head 中的信息
   site_headers: [
@@ -55,10 +55,10 @@ var config = {
 
   // RSS配置
   rss: {
-    title: '520SEX',
-    link: 'http://520sex.cf',
+    title: '区块链社区',
+    link: 'http://360btc.cf',
     language: 'zh-cn',
-    description: '520SEX：专业两性社区',
+    description: '全球区块链社区',
     //最多获取的RSS Item数量
     max_rss_items: 50
   },
@@ -123,7 +123,7 @@ var config = {
     ['share', '分享'],
     ['ask', '问答'],
     // ['job', '招聘'],
-    ['dating', 'YC']
+    ['transaction', '交易']
   ],
 
   // 极光推送
